@@ -33,7 +33,11 @@ func NewVSym() (*VSym, error) {
 func symantecIssued(cert *cert.Cert) bool {
 	for _, issuer := range Issuers {
 		if strings.Contains(strings.ToLower(cert.Issuer), strings.ToLower(issuer)) {
-			return true
+			issuedDate := cert.Certificate.NotBefore.In(time.Local)
+			baseDate := time.Date(2017, time.December, 1, 0, 0, 0, 0, time.Local)
+			if issuedDate.Before(baseDate) {
+				return true
+			}
 		}
 	}
 	return false
