@@ -14,6 +14,8 @@ var Issuers = []string{
 	"GeoTrust",
 	"thawte",
 	"RapidSSL",
+	"VeriSign",
+	"Equifax",
 }
 
 type VSym struct {
