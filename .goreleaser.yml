@@ -12,6 +12,7 @@ archive:
   name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
   files:
     - README.md
+    - examples
   format_overrides:
     - goos: windows
       format: zip
