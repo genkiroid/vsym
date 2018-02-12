@@ -4,12 +4,12 @@
 [[projects]]
   name = "github.com/genkiroid/cert"
   packages = ["."]
-  revision = "aed2cf1b2376da64562d069c408fcbd3adcaf493"
-  version = "0.10.0"
+  revision = "e204612b63152d39fe37342f8d827ece4b2d1e98"
+  version = "0.11.0"
 
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "911bf8c695e807818cbfb7206123216a033578fd96f6e4546d21c8ac9a847d3f"
+  inputs-digest = "cb461badee85701bea9a24c22a011b73978f10faefa8287324b44759d77708d9"
   solver-name = "gps-cdcl"
   solver-version = 1

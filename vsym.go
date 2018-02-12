@@ -31,7 +31,7 @@ func NewVSym() (*VSym, error) {
 }
 
 func symantecIssued(cert *cert.Cert) bool {
-	for _, c := range cert.CertChain {
+	for _, c := range cert.CertChain() {
 		for _, issuer := range Issuers {
 			if strings.Contains(strings.ToLower(c.Issuer.CommonName), strings.ToLower(issuer)) {
 				issuedDate := c.NotBefore.In(time.Local)
@@ -46,7 +46,7 @@ func symantecIssued(cert *cert.Cert) bool {
 }
 
 func chromeVer(cert *cert.Cert) string {
-	issuedDate := cert.Certificate.NotBefore.In(time.Local)
+	issuedDate := cert.Detail().NotBefore.In(time.Local)
 	baseDate := time.Date(2016, time.June, 1, 0, 0, 0, 0, time.Local)
 
 	if issuedDate.Before(baseDate) {
